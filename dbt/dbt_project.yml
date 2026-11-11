@@ -1,0 +1,14 @@
+name: lastfm_pipeline
+version: "0.1.0"
+config-version: 2
+profile: lastfm_pipeline
+
+vars:
+  local_timezone: "{{ env_var('LASTFM_TIMEZONE', 'UTC') }}"
+
+models:
+  lastfm_pipeline:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

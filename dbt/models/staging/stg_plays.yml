@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_plays
+    description: "One row per play, typed and flattened from raw_scrobbles."
+    columns:
+      - name: played_at_uts
+        description: "Unix timestamp (UTC) of the play."
+        tests: [not_null]
+      - name: played_at_utc
+        description: "Play time in UTC."
+        tests: [not_null]
+      - name: played_at_local
+        description: "Play time in the timezone set by LASTFM_TIMEZONE."
+      - name: artist
+        tests: [not_null]
+      - name: track
+        tests: [not_null]
+      - name: album
+        description: "Null when the scrobble has no album (about 0.2% of plays)."

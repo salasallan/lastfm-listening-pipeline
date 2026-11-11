@@ -1,0 +1,7 @@
+lastfm_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('LASTFM_DB_PATH', '../data/lastfm.duckdb') }}"
+      threads: 1

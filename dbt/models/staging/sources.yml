@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: lastfm
+    schema: main
+    tables:
+      - name: raw_scrobbles
+        description: "Last.fm scrobbles exactly as received from the API, one row per play."
