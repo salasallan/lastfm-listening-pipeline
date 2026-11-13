@@ -6,7 +6,7 @@ import requests
 API_URL = "https://ws.audioscrobbler.com/2.0/"
 RETRYABLE_HTTP = {429, 500, 502, 503, 504}
 RETRYABLE_API_ERRORS = {11, 16, 29}  # service offline, temporary error, rate limit
-
+HEADERS = {"User-Agent": "lastfm-listening-pipeline/0.1 (personal open-source project)"}
 
 class LastFmError(Exception):
     pass
@@ -17,7 +17,7 @@ def _request(params, max_retries=5):
     for attempt in range(max_retries):
         wait = 2 ** attempt
         try:
-            response = requests.get(API_URL, params=params, timeout=30)
+            response = requests.get(API_URL, params=params, headers=HEADERS, timeout=30)
         except requests.RequestException:
             time.sleep(wait)
             continue

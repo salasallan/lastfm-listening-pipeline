@@ -201,3 +201,6 @@ with tab_recent:
         recent, hide_index=True,
         column_config={"Played at": st.column_config.DatetimeColumn("Played at", format="YYYY-MM-DD HH:mm")},
     )
+
+st.divider()
+st.caption("Listening data from [Last.fm](https://www.last.fm). Personal, non-commercial project.")
