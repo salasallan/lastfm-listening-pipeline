@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: dim_artist_genre
+    description: "One row per artist with a single genre and genre family."
+    columns:
+      - name: artist
+        data_tests: [unique, not_null]
+      - name: genre
+        data_tests: [not_null]
+      - name: genre_family
+        data_tests: [not_null]

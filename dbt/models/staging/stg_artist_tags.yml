@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: stg_artist_tags
+    description: "One row per artist tag. Artists with no tags have no rows."
+    columns:
+      - name: artist
+        data_tests: [not_null]
+      - name: tag
+        data_tests: [not_null]
+      - name: tag_count
+        description: "Weighted tag count from Last.fm (0-100)."

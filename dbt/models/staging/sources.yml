@@ -6,3 +6,5 @@ sources:
     tables:
       - name: raw_scrobbles
         description: "Last.fm scrobbles exactly as received from the API, one row per play."
+      - name: raw_artist_tags
+        description: "Full Last.fm tag list per artist (JSON array), as received from artist.getTopTags."

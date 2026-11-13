@@ -1,0 +1,12 @@
+version: 2
+
+seeds:
+  - name: genre_mapping
+    description: "Hand-curated map from Last.fm tags to a genre and a genre family. Tags not listed here are not treated as genres."
+    columns:
+      - name: tag
+        data_tests: [unique, not_null]
+      - name: genre
+        data_tests: [not_null]
+      - name: genre_family
+        data_tests: [not_null]
