@@ -1,0 +1,54 @@
+version: 2
+
+models:
+  - name: mart_artist_daily
+    description: "Plays per artist per day (local date), with the artist's genre and genre family."
+    columns:
+      - name: play_date
+        data_tests: [not_null]
+      - name: artist
+        data_tests: [not_null]
+      - name: genre
+        data_tests: [not_null]
+      - name: genre_family
+        data_tests: [not_null]
+      - name: plays
+        data_tests: [not_null]
+
+  - name: mart_album_daily
+    description: "Plays per artist and album per day. Plays without an album are excluded."
+    columns:
+      - name: play_date
+        data_tests: [not_null]
+      - name: artist
+        data_tests: [not_null]
+      - name: album
+        data_tests: [not_null]
+      - name: plays
+        data_tests: [not_null]
+
+  - name: mart_track_daily
+    description: "Plays per artist and track per day."
+    columns:
+      - name: play_date
+        data_tests: [not_null]
+      - name: artist
+        data_tests: [not_null]
+      - name: track
+        data_tests: [not_null]
+      - name: plays
+        data_tests: [not_null]
+
+  - name: mart_recent_plays
+    description: "The most recent plays (100 by default), with genre. The only play-level table that is published."
+    columns:
+      - name: played_at_local
+        data_tests: [not_null]
+      - name: artist
+        data_tests: [not_null]
+      - name: track
+        data_tests: [not_null]
+      - name: genre
+        data_tests: [not_null]
+      - name: genre_family
+        data_tests: [not_null]
