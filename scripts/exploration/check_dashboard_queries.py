@@ -83,6 +83,24 @@ for label, (start, end) in ranges.items():
         f"group by g.genre_family order by plays desc, g.genre_family", [start, end]).fetchall()
     check("genre families", rows(q.genre_family_breakdown(dash, start, end), ["genre_family", "plays"]) == exp)
 
+    exp = full.execute(
+        "select g.genre, count(*) as plays from stg_plays p "
+        "join dim_artist_genre g on g.artist = p.artist "
+        "where cast(p.played_at_local as date) between ? and ? "
+        f"group by g.genre order by plays desc, g.genre limit {N}", [start, end]).fetchall()
+    check("genres", rows(q.genre_breakdown(dash, start, end, None, N), ["genre", "plays"]) == exp)
+
+    exp_metal = full.execute(
+        "select count(*) from stg_plays p join dim_artist_genre g on g.artist = p.artist "
+        "where cast(p.played_at_local as date) between ? and ? and g.genre_family = 'Metal'",
+        [start, end]).fetchone()[0]
+    metal = q.genre_breakdown(dash, start, end, "Metal", 1000)
+    check("genres filtered by family (Metal)", int(metal["plays"].sum()) == exp_metal)
+
+    for grain in ("week", "month"):
+        s = q.plays_over_time(dash, start, end, grain)
+        check(f"plays over time by {grain} sums to total", int(s["plays"].sum()) == exp_plays)
+
     series = q.plays_over_time(dash, start, end, "day")
     check("plays over time sums to total and covers every day",
           int(series["plays"].sum()) == exp_plays and len(series) == (end - start).days + 1)

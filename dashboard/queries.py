@@ -130,3 +130,31 @@ def recent_plays(con) -> pd.DataFrame:
         from mart_recent_plays
         order by played_at_local desc
     """)
+
+_TABLES = ["mart_artist_daily", "mart_album_daily", "mart_track_daily", "mart_recent_plays", "meta"]
+
+
+def load_dashboard_db(path):
+    """Copy the exported tables into an in-memory DuckDB and release the file.
+
+    The exported file is not held open, so the export script can replace it while the
+    app runs; the app notices the new version through the file's modification time.
+    """
+    mem = duckdb.connect(":memory:")
+    safe_path = str(path).replace("\\", "/").replace("'", "''")
+    mem.execute(f"ATTACH '{safe_path}' AS src (READ_ONLY)")
+    try:
+        for table in _TABLES:
+            mem.execute(f"CREATE TABLE {table} AS SELECT * FROM src.main.{table}")
+    finally:
+        mem.execute("DETACH src")
+    return mem
+
+
+def first_play_date(con) -> date:
+    return pd.Timestamp(con.execute("select min(play_date) from mart_artist_daily").fetchone()[0]).date()
+
+
+def all_families(con) -> list[str]:
+    return [r[0] for r in con.execute(
+        "select distinct genre_family from mart_artist_daily order by genre_family").fetchall()]
