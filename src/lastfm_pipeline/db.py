@@ -18,12 +18,20 @@ CREATE TABLE IF NOT EXISTS raw_scrobbles (
 );
 """
 
+TAGS_SCHEMA = """
+CREATE TABLE IF NOT EXISTS raw_artist_tags (
+    artist      VARCHAR   PRIMARY KEY,
+    payload     JSON      NOT NULL,
+    fetched_at  TIMESTAMP NOT NULL DEFAULT current_timestamp
+);
+"""
 
 def connect(db_path=DEFAULT_DB_PATH):
     db_path = Path(db_path)
     db_path.parent.mkdir(parents=True, exist_ok=True)
     con = duckdb.connect(str(db_path))
     con.execute(SCHEMA)
+    con.execute(TAGS_SCHEMA)
     return con
 
 
@@ -78,3 +86,25 @@ def insert_plays(con, user, plays):
         raise
 
     return count_rows(con) - before
+
+def artists_missing_tags(con):
+    """Artists with plays but no stored tags yet, most-played first."""
+    return [
+        row[0]
+        for row in con.execute(
+            """
+            SELECT artist FROM (
+                SELECT artist, count(*) AS plays FROM raw_scrobbles GROUP BY artist
+            )
+            WHERE artist NOT IN (SELECT artist FROM raw_artist_tags)
+            ORDER BY plays DESC
+            """
+        ).fetchall()
+    ]
+
+def insert_artist_tags(con, artist, tags):
+    """Store an artist's tag list as JSON. An empty list means 'fetched, no tags'."""
+    con.execute(
+        "INSERT INTO raw_artist_tags (artist, payload) VALUES (?, ?) ON CONFLICT DO NOTHING",
+        [artist, json.dumps(tags, ensure_ascii=False)],
+    )
