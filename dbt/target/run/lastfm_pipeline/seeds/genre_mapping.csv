@@ -1,7 +1,9 @@
 
     
     
-    truncate table "lastfm"."main"."genre_mapping";
+    
+    create table "lastfm"."main"."genre_mapping" ("tag" text,"genre" text,"genre_family" text)
+  ;
     -- dbt seed --
     
           COPY "lastfm"."main"."genre_mapping" FROM 'C:\Users\allan\Documents\Lastfm_Project\dbt\seeds\genre_mapping.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')

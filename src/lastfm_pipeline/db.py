@@ -6,6 +6,22 @@ import duckdb
 
 DEFAULT_DB_PATH = Path("data/lastfm.duckdb")
 
+MAX_TAGS_PER_ARTIST = 25
+PLAY_KEYS = ("artist", "album", "name", "mbid", "url", "date")
+
+
+def slim_play(play: dict) -> dict:
+    """Keep only the fields the pipeline uses (drops image URLs and other unused fields)."""
+    return {k: play[k] for k in PLAY_KEYS if k in play}
+
+
+def slim_tags(tags: list) -> list:
+    """Keep the top tags by weight, with only name and count."""
+    ranked = sorted((t for t in tags if t.get("name")),
+                    key=lambda t: int(t.get("count", 0)), reverse=True)
+    return [{"name": t["name"], "count": int(t.get("count", 0))}
+            for t in ranked[:MAX_TAGS_PER_ARTIST]]
+
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS raw_scrobbles (
     lastfm_user  VARCHAR   NOT NULL,
@@ -61,7 +77,7 @@ def insert_plays(con, user, plays):
             int(t["date"]["uts"]),
             _text(t.get("artist")),
             t.get("name", ""),
-            json.dumps(t, ensure_ascii=False),
+            json.dumps(slim_play(t), ensure_ascii=False),
         )
         for t in plays
     ]
@@ -106,5 +122,5 @@ def insert_artist_tags(con, artist, tags):
     """Store an artist's tag list as JSON. An empty list means 'fetched, no tags'."""
     con.execute(
         "INSERT INTO raw_artist_tags (artist, payload) VALUES (?, ?) ON CONFLICT DO NOTHING",
-        [artist, json.dumps(tags, ensure_ascii=False)],
+        [artist, json.dumps(slim_tags(tags), ensure_ascii=False)],
     )
