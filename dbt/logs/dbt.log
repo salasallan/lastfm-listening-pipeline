@@ -11735,3 +11735,2255 @@ where track is null
 [0m18:10:53.179418 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022245833770>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000222466971D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022246697BF0>]}
 [0m18:10:53.179780 [debug] [MainThread]: Flushing usage events
 [0m18:10:53.845330 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:40:06.656306 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D03DBF1A90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D040297ED0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D0402979D0>]}
+
+
+============================== 19:40:06.663558 | 4e618338-9546-4769-a294-45514c2a112c ==============================
+[0m19:40:06.663558 [info ] [MainThread]: Running with dbt=1.12.6
+[0m19:40:06.664325 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'maximum_seed_size_mib': '1', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\allan\\Documents\\Lastfm_Project\\dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt build', 'hints_enabled': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'indirect_selection': 'eager', 'log_path': 'C:\\Users\\allan\\Documents\\Lastfm_Project\\dbt\\logs'}
+[0m19:40:07.027080 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D03E106B10>]}
+[0m19:40:07.095090 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D04022E690>]}
+[0m19:40:07.098520 [info ] [MainThread]: Registered adapter: duckdb=1.11.1
+[0m19:40:07.491634 [debug] [MainThread]: checksum: 3b7455c304fe87e3a841796bec549ca24129640a42e73afb6fe3f2eadb28731c, vars: {}, profile: lastfm_pipeline, target: dev, version: 1.12.6
+[0m19:40:08.500810 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:40:08.501185 [debug] [MainThread]: Nothing changed, skipping partial parsing.
+[0m19:40:08.501459 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:40:08.511719 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D040BE6450>]}
+[0m19:40:08.710692 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\allan\Documents\Lastfm_Project\dbt\target\manifest.json
+[0m19:40:08.713258 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\allan\Documents\Lastfm_Project\dbt\target\semantic_manifest.json
+[0m19:40:08.755566 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\allan\Documents\Lastfm_Project\dbt\target\osi_document.json
+[0m19:40:08.796970 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D040D53D40>]}
+[0m19:40:08.797496 [info ] [MainThread]: Found 7 models, 37 data tests, 1 seed, 2 sources, 511 macros
+[0m19:40:08.802622 [info ] [MainThread]: 
+[0m19:40:08.803038 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m19:40:08.803414 [info ] [MainThread]: 
+[0m19:40:08.804012 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m19:40:08.809329 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_lastfm'
+[0m19:40:10.749720 [debug] [ThreadPool]: Using duckdb connection "list_lastfm"
+[0m19:40:10.750105 [debug] [ThreadPool]: On list_lastfm: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "connection_name": "list_lastfm"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"lastfm"'
+    
+  
+  
+[0m19:40:10.750421 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:40:10.792040 [debug] [ThreadPool]: SQL status: OK in 0.041 seconds
+[0m19:40:10.793311 [debug] [ThreadPool]: On list_lastfm: Close
+[0m19:40:10.794006 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_lastfm, now create_lastfm_main)
+[0m19:40:10.794473 [debug] [ThreadPool]: Creating schema "database: "lastfm"
+schema: "main"
+"
+[0m19:40:10.801504 [debug] [ThreadPool]: Using duckdb connection "create_lastfm_main"
+[0m19:40:10.801856 [debug] [ThreadPool]: On create_lastfm_main: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "connection_name": "create_lastfm_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='lastfm'
+        and type != 'duckdb'
+    
+  
+[0m19:40:10.802158 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:40:10.804511 [debug] [ThreadPool]: SQL status: OK in 0.002 seconds
+[0m19:40:10.805683 [debug] [ThreadPool]: Using duckdb connection "create_lastfm_main"
+[0m19:40:10.805987 [debug] [ThreadPool]: On create_lastfm_main: BEGIN
+[0m19:40:10.806498 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:40:10.806798 [debug] [ThreadPool]: Using duckdb connection "create_lastfm_main"
+[0m19:40:10.807091 [debug] [ThreadPool]: On create_lastfm_main: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "connection_name": "create_lastfm_main"} */
+
+    
+    
+        create schema if not exists "lastfm"."main"
+    
+[0m19:40:10.808042 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:40:10.808823 [debug] [ThreadPool]: On create_lastfm_main: COMMIT
+[0m19:40:10.809134 [debug] [ThreadPool]: Using duckdb connection "create_lastfm_main"
+[0m19:40:10.809475 [debug] [ThreadPool]: On create_lastfm_main: COMMIT
+[0m19:40:10.810005 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:40:10.810332 [debug] [ThreadPool]: On create_lastfm_main: Close
+[0m19:40:10.812211 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_lastfm_main'
+[0m19:40:10.816492 [debug] [ThreadPool]: Using duckdb connection "list_lastfm_main"
+[0m19:40:10.816854 [debug] [ThreadPool]: On list_lastfm_main: BEGIN
+[0m19:40:10.817155 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:40:10.817736 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:40:10.818035 [debug] [ThreadPool]: Using duckdb connection "list_lastfm_main"
+[0m19:40:10.818382 [debug] [ThreadPool]: On list_lastfm_main: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "connection_name": "list_lastfm_main"} */
+select
+      'lastfm' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'lastfm'
+  
+[0m19:40:10.840809 [debug] [ThreadPool]: SQL status: OK in 0.022 seconds
+[0m19:40:10.842922 [debug] [ThreadPool]: On list_lastfm_main: ROLLBACK
+[0m19:40:10.843450 [debug] [ThreadPool]: On list_lastfm_main: Close
+[0m19:40:10.845700 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D040E68830>]}
+[0m19:40:10.846133 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:40:10.846432 [debug] [MainThread]: On master: BEGIN
+[0m19:40:10.846746 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:40:10.847245 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:40:10.847550 [debug] [MainThread]: On master: COMMIT
+[0m19:40:10.847930 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:40:10.848241 [debug] [MainThread]: On master: COMMIT
+[0m19:40:10.848734 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:40:10.849087 [debug] [MainThread]: On master: Close
+[0m19:40:10.853965 [debug] [Thread-1 (]: Began running node model.lastfm_pipeline.stg_artist_tags
+[0m19:40:10.854498 [info ] [Thread-1 (]: 1 of 45 START sql view model main.stg_artist_tags .............................. [RUN]
+[0m19:40:10.855119 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.lastfm_pipeline.stg_artist_tags'
+[0m19:40:10.855495 [debug] [Thread-1 (]: Began compiling node model.lastfm_pipeline.stg_artist_tags
+[0m19:40:10.861099 [debug] [Thread-1 (]: Writing injected SQL for node "model.lastfm_pipeline.stg_artist_tags"
+[0m19:40:10.862036 [debug] [Thread-1 (]: Began executing node model.lastfm_pipeline.stg_artist_tags
+[0m19:40:10.863618 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_artist_tags"
+[0m19:40:10.864010 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_artist_tags: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.stg_artist_tags"} */
+select database_name, type from duckdb_databases()
+[0m19:40:10.864359 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:40:10.865444 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:10.866750 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_artist_tags"
+[0m19:40:10.867165 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_artist_tags: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.stg_artist_tags"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('lastfm')
+                      and lower(schema_name) = lower('main')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m19:40:10.871568 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m19:40:10.900280 [debug] [Thread-1 (]: Writing runtime sql for node "model.lastfm_pipeline.stg_artist_tags"
+[0m19:40:10.901300 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_artist_tags"
+[0m19:40:10.901703 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_artist_tags: BEGIN
+[0m19:40:10.902372 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:10.902746 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_artist_tags"
+[0m19:40:10.903113 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_artist_tags: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.stg_artist_tags"} */
+
+  
+  create view "lastfm"."main"."stg_artist_tags__dbt_tmp" as (
+    -- One row per artist tag, flattened from the JSON array in raw_artist_tags.
+-- Artists whose tag list is empty produce no rows.
+select
+    artist,
+    lower(json_extract_string(tag, '$.name'))                as tag,
+    cast(json_extract_string(tag, '$.count') as integer)     as tag_count
+from (
+    select artist, unnest(from_json(payload, '["JSON"]')) as tag
+    from "lastfm"."main"."raw_artist_tags"
+)
+  );
+
+[0m19:40:10.905135 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:10.910430 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_artist_tags"
+[0m19:40:10.910821 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_artist_tags: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.stg_artist_tags"} */
+alter view "lastfm"."main"."stg_artist_tags" rename to "stg_artist_tags__dbt_backup"
+[0m19:40:10.912978 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:10.914961 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_artist_tags"
+[0m19:40:10.915328 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_artist_tags: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.stg_artist_tags"} */
+alter view "lastfm"."main"."stg_artist_tags__dbt_tmp" rename to "stg_artist_tags"
+[0m19:40:10.915981 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:10.931572 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_artist_tags: COMMIT
+[0m19:40:10.932002 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_artist_tags"
+[0m19:40:10.932358 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_artist_tags: COMMIT
+[0m19:40:10.935692 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m19:40:10.940980 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_artist_tags"
+[0m19:40:10.941416 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_artist_tags: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.stg_artist_tags"} */
+
+      drop view if exists "lastfm"."main"."stg_artist_tags__dbt_backup" cascade
+    
+[0m19:40:10.944120 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:10.946445 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_artist_tags: Close
+[0m19:40:10.948857 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D04125B6C0>]}
+[0m19:40:10.949487 [info ] [Thread-1 (]: 1 of 45 OK created sql view model main.stg_artist_tags ......................... [[32mOK[0m in 0.09s]
+[0m19:40:10.950237 [debug] [Thread-1 (]: Finished running node model.lastfm_pipeline.stg_artist_tags
+[0m19:40:10.950658 [debug] [Thread-1 (]: Began running node model.lastfm_pipeline.stg_plays
+[0m19:40:10.951219 [info ] [Thread-1 (]: 2 of 45 START sql view model main.stg_plays .................................... [RUN]
+[0m19:40:10.951825 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.lastfm_pipeline.stg_artist_tags, now model.lastfm_pipeline.stg_plays)
+[0m19:40:10.952194 [debug] [Thread-1 (]: Began compiling node model.lastfm_pipeline.stg_plays
+[0m19:40:10.954915 [debug] [Thread-1 (]: Writing injected SQL for node "model.lastfm_pipeline.stg_plays"
+[0m19:40:10.956017 [debug] [Thread-1 (]: Began executing node model.lastfm_pipeline.stg_plays
+[0m19:40:10.959680 [debug] [Thread-1 (]: Writing runtime sql for node "model.lastfm_pipeline.stg_plays"
+[0m19:40:10.960766 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_plays"
+[0m19:40:10.961169 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_plays: BEGIN
+[0m19:40:10.961527 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:10.962207 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:10.962566 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_plays"
+[0m19:40:10.962946 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_plays: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.stg_plays"} */
+
+  
+  create view "lastfm"."main"."stg_plays__dbt_tmp" as (
+    -- Staging model: one row per play, typed and flattened from raw_scrobbles.
+select
+    lastfm_user,
+    uts                                                          as played_at_uts,
+    make_timestamp(uts * 1000000)                                as played_at_utc,
+    timezone('America/Costa_Rica', to_timestamp(uts))   as played_at_local,
+    artist,
+    track,
+    nullif(json_extract_string(payload, '$.album."#text"'), '')  as album,
+    nullif(json_extract_string(payload, '$.artist.mbid'), '')    as artist_mbid,
+    nullif(json_extract_string(payload, '$.album.mbid'), '')     as album_mbid,
+    nullif(json_extract_string(payload, '$.mbid'), '')           as track_mbid,
+    json_extract_string(payload, '$.url')                        as track_url,
+    ingested_at
+from "lastfm"."main"."raw_scrobbles"
+  );
+
+[0m19:40:10.965611 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:10.967751 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_plays"
+[0m19:40:10.968118 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_plays: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.stg_plays"} */
+alter view "lastfm"."main"."stg_plays" rename to "stg_plays__dbt_backup"
+[0m19:40:10.968788 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:10.970685 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_plays"
+[0m19:40:10.971045 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_plays: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.stg_plays"} */
+alter view "lastfm"."main"."stg_plays__dbt_tmp" rename to "stg_plays"
+[0m19:40:10.971688 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:10.974043 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_plays: COMMIT
+[0m19:40:10.974578 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_plays"
+[0m19:40:10.975070 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_plays: COMMIT
+[0m19:40:10.977731 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:10.979355 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.stg_plays"
+[0m19:40:10.979721 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_plays: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.stg_plays"} */
+
+      drop view if exists "lastfm"."main"."stg_plays__dbt_backup" cascade
+    
+[0m19:40:10.981547 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:10.982781 [debug] [Thread-1 (]: On model.lastfm_pipeline.stg_plays: Close
+[0m19:40:10.983309 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D0411D4E90>]}
+[0m19:40:10.983875 [info ] [Thread-1 (]: 2 of 45 OK created sql view model main.stg_plays ............................... [[32mOK[0m in 0.03s]
+[0m19:40:10.984563 [debug] [Thread-1 (]: Finished running node model.lastfm_pipeline.stg_plays
+[0m19:40:10.984969 [debug] [Thread-1 (]: Began running node seed.lastfm_pipeline.genre_mapping
+[0m19:40:10.985603 [info ] [Thread-1 (]: 3 of 45 START seed file main.genre_mapping ..................................... [RUN]
+[0m19:40:10.986137 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.lastfm_pipeline.stg_plays, now seed.lastfm_pipeline.genre_mapping)
+[0m19:40:10.986504 [debug] [Thread-1 (]: Began compiling node seed.lastfm_pipeline.genre_mapping
+[0m19:40:10.986863 [debug] [Thread-1 (]: Began executing node seed.lastfm_pipeline.genre_mapping
+[0m19:40:11.012099 [debug] [Thread-1 (]: Using duckdb connection "seed.lastfm_pipeline.genre_mapping"
+[0m19:40:11.012525 [debug] [Thread-1 (]: On seed.lastfm_pipeline.genre_mapping: BEGIN
+[0m19:40:11.012898 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.013579 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.013946 [debug] [Thread-1 (]: Using duckdb connection "seed.lastfm_pipeline.genre_mapping"
+[0m19:40:11.014300 [debug] [Thread-1 (]: On seed.lastfm_pipeline.genre_mapping: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "seed.lastfm_pipeline.genre_mapping"} */
+truncate table "lastfm"."main"."genre_mapping"
+[0m19:40:11.015660 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.026789 [debug] [Thread-1 (]: Using duckdb connection "seed.lastfm_pipeline.genre_mapping"
+[0m19:40:11.027260 [debug] [Thread-1 (]: On seed.lastfm_pipeline.genre_mapping: 
+          COPY "lastfm"."main"."genre_mapping" FROM 'C:\Users\allan\Documents\Lastfm_Project\dbt\seeds\genre_mapping.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        ...
+[0m19:40:11.041442 [debug] [Thread-1 (]: SQL status: OK in 0.014 seconds
+[0m19:40:11.046834 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.lastfm_pipeline.genre_mapping"
+[0m19:40:11.048902 [debug] [Thread-1 (]: On seed.lastfm_pipeline.genre_mapping: COMMIT
+[0m19:40:11.049312 [debug] [Thread-1 (]: Using duckdb connection "seed.lastfm_pipeline.genre_mapping"
+[0m19:40:11.049668 [debug] [Thread-1 (]: On seed.lastfm_pipeline.genre_mapping: COMMIT
+[0m19:40:11.051645 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:11.052766 [debug] [Thread-1 (]: On seed.lastfm_pipeline.genre_mapping: Close
+[0m19:40:11.053289 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D040E0BA10>]}
+[0m19:40:11.053774 [info ] [Thread-1 (]: 3 of 45 OK loaded seed file main.genre_mapping ................................. [[32mINSERT 164[0m in 0.07s]
+[0m19:40:11.054457 [debug] [Thread-1 (]: Finished running node seed.lastfm_pipeline.genre_mapping
+[0m19:40:11.054907 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276
+[0m19:40:11.055488 [info ] [Thread-1 (]: 4 of 45 START test not_null_stg_artist_tags_artist ............................. [RUN]
+[0m19:40:11.056082 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.lastfm_pipeline.genre_mapping, now test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276)
+[0m19:40:11.056500 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276
+[0m19:40:11.069680 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276"
+[0m19:40:11.070647 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276
+[0m19:40:11.071570 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276"
+[0m19:40:11.071947 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276"} */
+
+                    select table_name, constraint_type from duckdb_constraints()
+                    where lower(database_name) = lower('lastfm')
+                      and lower(schema_name) = lower('main_dbt_test__audit')
+                      and constraint_type in ('PRIMARY KEY', 'UNIQUE', 'FOREIGN KEY')
+                    
+[0m19:40:11.072322 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.074040 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:11.094557 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276"
+[0m19:40:11.095625 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276"
+[0m19:40:11.096076 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276: BEGIN
+[0m19:40:11.096796 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:11.097195 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276"
+[0m19:40:11.097578 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artist
+from "lastfm"."main"."stg_artist_tags"
+where artist is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.100215 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:11.103679 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276: ROLLBACK
+[0m19:40:11.104441 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276: Close
+[0m19:40:11.105107 [info ] [Thread-1 (]: 4 of 45 PASS not_null_stg_artist_tags_artist ................................... [[32mPASS[0m in 0.05s]
+[0m19:40:11.105948 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276
+[0m19:40:11.106492 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042
+[0m19:40:11.107098 [info ] [Thread-1 (]: 5 of 45 START test not_null_stg_artist_tags_tag ................................ [RUN]
+[0m19:40:11.107670 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_stg_artist_tags_artist.15bd15e276, now test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042)
+[0m19:40:11.108051 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042
+[0m19:40:11.114874 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042"
+[0m19:40:11.115838 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042
+[0m19:40:11.117623 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042"
+[0m19:40:11.118623 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042"
+[0m19:40:11.119036 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042: BEGIN
+[0m19:40:11.119396 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.120105 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.120491 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042"
+[0m19:40:11.120867 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select tag
+from "lastfm"."main"."stg_artist_tags"
+where tag is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.143679 [debug] [Thread-1 (]: SQL status: OK in 0.022 seconds
+[0m19:40:11.145371 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042: ROLLBACK
+[0m19:40:11.146077 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042: Close
+[0m19:40:11.146760 [info ] [Thread-1 (]: 5 of 45 PASS not_null_stg_artist_tags_tag ...................................... [[32mPASS[0m in 0.04s]
+[0m19:40:11.147657 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042
+[0m19:40:11.148104 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c
+[0m19:40:11.148565 [info ] [Thread-1 (]: 6 of 45 START test not_null_stg_plays_artist ................................... [RUN]
+[0m19:40:11.149186 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_stg_artist_tags_tag.44790b6042, now test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c)
+[0m19:40:11.149571 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c
+[0m19:40:11.155914 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c"
+[0m19:40:11.157190 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c
+[0m19:40:11.159014 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c"
+[0m19:40:11.160176 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c"
+[0m19:40:11.160605 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c: BEGIN
+[0m19:40:11.160961 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.161666 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.162068 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c"
+[0m19:40:11.162437 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artist
+from "lastfm"."main"."stg_plays"
+where artist is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.164866 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:11.166420 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c: ROLLBACK
+[0m19:40:11.167099 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c: Close
+[0m19:40:11.167762 [info ] [Thread-1 (]: 6 of 45 PASS not_null_stg_plays_artist ......................................... [[32mPASS[0m in 0.02s]
+[0m19:40:11.168431 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c
+[0m19:40:11.168839 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3
+[0m19:40:11.169349 [info ] [Thread-1 (]: 7 of 45 START test not_null_stg_plays_played_at_utc ............................ [RUN]
+[0m19:40:11.169919 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_stg_plays_artist.22384c738c, now test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3)
+[0m19:40:11.170337 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3
+[0m19:40:11.177548 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3"
+[0m19:40:11.178553 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3
+[0m19:40:11.180220 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3"
+[0m19:40:11.181148 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3"
+[0m19:40:11.181530 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3: BEGIN
+[0m19:40:11.181880 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.182565 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.182945 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3"
+[0m19:40:11.183317 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select played_at_utc
+from "lastfm"."main"."stg_plays"
+where played_at_utc is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.187012 [debug] [Thread-1 (]: SQL status: OK in 0.003 seconds
+[0m19:40:11.188398 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3: ROLLBACK
+[0m19:40:11.188992 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3: Close
+[0m19:40:11.189570 [info ] [Thread-1 (]: 7 of 45 PASS not_null_stg_plays_played_at_utc .................................. [[32mPASS[0m in 0.02s]
+[0m19:40:11.190232 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3
+[0m19:40:11.190639 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd
+[0m19:40:11.191171 [info ] [Thread-1 (]: 8 of 45 START test not_null_stg_plays_played_at_uts ............................ [RUN]
+[0m19:40:11.191743 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_stg_plays_played_at_utc.bd07ccbed3, now test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd)
+[0m19:40:11.192134 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd
+[0m19:40:11.198139 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd"
+[0m19:40:11.199075 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd
+[0m19:40:11.200689 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd"
+[0m19:40:11.201574 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd"
+[0m19:40:11.201947 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd: BEGIN
+[0m19:40:11.202291 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.202958 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.203322 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd"
+[0m19:40:11.203686 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select played_at_uts
+from "lastfm"."main"."stg_plays"
+where played_at_uts is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.205804 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:11.207533 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd: ROLLBACK
+[0m19:40:11.208411 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd: Close
+[0m19:40:11.209234 [info ] [Thread-1 (]: 8 of 45 PASS not_null_stg_plays_played_at_uts .................................. [[32mPASS[0m in 0.02s]
+[0m19:40:11.209937 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd
+[0m19:40:11.210336 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4
+[0m19:40:11.210760 [info ] [Thread-1 (]: 9 of 45 START test not_null_stg_plays_track .................................... [RUN]
+[0m19:40:11.211353 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_stg_plays_played_at_uts.f90e84afbd, now test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4)
+[0m19:40:11.211758 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4
+[0m19:40:11.218237 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4"
+[0m19:40:11.219280 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4
+[0m19:40:11.220902 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4"
+[0m19:40:11.221768 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4"
+[0m19:40:11.222139 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4: BEGIN
+[0m19:40:11.222482 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.223206 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.223589 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4"
+[0m19:40:11.223955 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select track
+from "lastfm"."main"."stg_plays"
+where track is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.226296 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:11.227774 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4: ROLLBACK
+[0m19:40:11.228401 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4: Close
+[0m19:40:11.228991 [info ] [Thread-1 (]: 9 of 45 PASS not_null_stg_plays_track .......................................... [[32mPASS[0m in 0.02s]
+[0m19:40:11.229695 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4
+[0m19:40:11.230107 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.stg_plays_row_count_matches_raw
+[0m19:40:11.230480 [info ] [Thread-1 (]: 10 of 45 START test stg_plays_row_count_matches_raw ............................ [RUN]
+[0m19:40:11.231071 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_stg_plays_track.5b3e53e3f4, now test.lastfm_pipeline.stg_plays_row_count_matches_raw)
+[0m19:40:11.231450 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.stg_plays_row_count_matches_raw
+[0m19:40:11.233491 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.stg_plays_row_count_matches_raw"
+[0m19:40:11.234464 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.stg_plays_row_count_matches_raw
+[0m19:40:11.236054 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.stg_plays_row_count_matches_raw"
+[0m19:40:11.236888 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.stg_plays_row_count_matches_raw"
+[0m19:40:11.237249 [debug] [Thread-1 (]: On test.lastfm_pipeline.stg_plays_row_count_matches_raw: BEGIN
+[0m19:40:11.237617 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.238283 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.238642 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.stg_plays_row_count_matches_raw"
+[0m19:40:11.239007 [debug] [Thread-1 (]: On test.lastfm_pipeline.stg_plays_row_count_matches_raw: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.stg_plays_row_count_matches_raw"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- Returns a row (and fails) when staging and raw row counts differ.
+select raw_count, stg_count
+from (
+    select
+        (select count(*) from "lastfm"."main"."raw_scrobbles") as raw_count,
+        (select count(*) from "lastfm"."main"."stg_plays")                  as stg_count
+)
+where raw_count != stg_count
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.243388 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m19:40:11.244913 [debug] [Thread-1 (]: On test.lastfm_pipeline.stg_plays_row_count_matches_raw: ROLLBACK
+[0m19:40:11.245543 [debug] [Thread-1 (]: On test.lastfm_pipeline.stg_plays_row_count_matches_raw: Close
+[0m19:40:11.246139 [info ] [Thread-1 (]: 10 of 45 PASS stg_plays_row_count_matches_raw .................................. [[32mPASS[0m in 0.02s]
+[0m19:40:11.246820 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.stg_plays_row_count_matches_raw
+[0m19:40:11.247216 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8
+[0m19:40:11.247659 [info ] [Thread-1 (]: 11 of 45 START test not_null_genre_mapping_genre ............................... [RUN]
+[0m19:40:11.248250 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.stg_plays_row_count_matches_raw, now test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8)
+[0m19:40:11.248638 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8
+[0m19:40:11.254940 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8"
+[0m19:40:11.255973 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8
+[0m19:40:11.258187 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8"
+[0m19:40:11.259745 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8"
+[0m19:40:11.260183 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8: BEGIN
+[0m19:40:11.260537 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.261236 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.261621 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8"
+[0m19:40:11.262087 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select genre
+from "lastfm"."main"."genre_mapping"
+where genre is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.263506 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.264989 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8: ROLLBACK
+[0m19:40:11.265658 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8: Close
+[0m19:40:11.266270 [info ] [Thread-1 (]: 11 of 45 PASS not_null_genre_mapping_genre ..................................... [[32mPASS[0m in 0.02s]
+[0m19:40:11.266950 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8
+[0m19:40:11.267402 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4
+[0m19:40:11.267834 [info ] [Thread-1 (]: 12 of 45 START test not_null_genre_mapping_genre_family ........................ [RUN]
+[0m19:40:11.268358 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_genre_mapping_genre.38161849c8, now test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4)
+[0m19:40:11.268726 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4
+[0m19:40:11.275345 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4"
+[0m19:40:11.276442 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4
+[0m19:40:11.278121 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4"
+[0m19:40:11.279059 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4"
+[0m19:40:11.279439 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4: BEGIN
+[0m19:40:11.279780 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.280435 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.280786 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4"
+[0m19:40:11.281142 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select genre_family
+from "lastfm"."main"."genre_mapping"
+where genre_family is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.282388 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.283827 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4: ROLLBACK
+[0m19:40:11.284434 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4: Close
+[0m19:40:11.285027 [info ] [Thread-1 (]: 12 of 45 PASS not_null_genre_mapping_genre_family .............................. [[32mPASS[0m in 0.02s]
+[0m19:40:11.285693 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4
+[0m19:40:11.286087 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4
+[0m19:40:11.286509 [info ] [Thread-1 (]: 13 of 45 START test not_null_genre_mapping_tag ................................. [RUN]
+[0m19:40:11.287003 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_genre_mapping_genre_family.6d36bac5e4, now test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4)
+[0m19:40:11.287365 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4
+[0m19:40:11.294115 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4"
+[0m19:40:11.295198 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4
+[0m19:40:11.296888 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4"
+[0m19:40:11.297892 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4"
+[0m19:40:11.298353 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4: BEGIN
+[0m19:40:11.298736 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.299606 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.299982 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4"
+[0m19:40:11.300352 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select tag
+from "lastfm"."main"."genre_mapping"
+where tag is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.301613 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.303019 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4: ROLLBACK
+[0m19:40:11.303575 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4: Close
+[0m19:40:11.304212 [info ] [Thread-1 (]: 13 of 45 PASS not_null_genre_mapping_tag ....................................... [[32mPASS[0m in 0.02s]
+[0m19:40:11.305042 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4
+[0m19:40:11.305463 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90
+[0m19:40:11.305893 [info ] [Thread-1 (]: 14 of 45 START test unique_genre_mapping_tag ................................... [RUN]
+[0m19:40:11.306475 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_genre_mapping_tag.97b6f7fff4, now test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90)
+[0m19:40:11.306869 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90
+[0m19:40:11.315113 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90"
+[0m19:40:11.316074 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90
+[0m19:40:11.317688 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90"
+[0m19:40:11.318543 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90"
+[0m19:40:11.318908 [debug] [Thread-1 (]: On test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90: BEGIN
+[0m19:40:11.319250 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.319922 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.320287 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90"
+[0m19:40:11.320646 [debug] [Thread-1 (]: On test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    tag as unique_field,
+    count(*) as n_records
+
+from "lastfm"."main"."genre_mapping"
+where tag is not null
+group by tag
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.323120 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:11.324769 [debug] [Thread-1 (]: On test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90: ROLLBACK
+[0m19:40:11.325499 [debug] [Thread-1 (]: On test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90: Close
+[0m19:40:11.326394 [info ] [Thread-1 (]: 14 of 45 PASS unique_genre_mapping_tag ......................................... [[32mPASS[0m in 0.02s]
+[0m19:40:11.327094 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90
+[0m19:40:11.327526 [debug] [Thread-1 (]: Began running node model.lastfm_pipeline.mart_album_daily
+[0m19:40:11.327988 [info ] [Thread-1 (]: 15 of 45 START sql table model main.mart_album_daily ........................... [RUN]
+[0m19:40:11.328590 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.unique_genre_mapping_tag.538e04aa90, now model.lastfm_pipeline.mart_album_daily)
+[0m19:40:11.328987 [debug] [Thread-1 (]: Began compiling node model.lastfm_pipeline.mart_album_daily
+[0m19:40:11.330652 [debug] [Thread-1 (]: Writing injected SQL for node "model.lastfm_pipeline.mart_album_daily"
+[0m19:40:11.331571 [debug] [Thread-1 (]: Began executing node model.lastfm_pipeline.mart_album_daily
+[0m19:40:11.381472 [debug] [Thread-1 (]: Writing runtime sql for node "model.lastfm_pipeline.mart_album_daily"
+[0m19:40:11.382538 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_album_daily"
+[0m19:40:11.382921 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_album_daily: BEGIN
+[0m19:40:11.383265 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.383960 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.384332 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_album_daily"
+[0m19:40:11.384700 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_album_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_album_daily"} */
+
+    
+
+    create  table
+      "lastfm"."main"."mart_album_daily__dbt_tmp"
+  
+    
+    as (
+      -- Plays per artist + album per day. Plays without an album are excluded.
+-- The key is the artist/album pair because different artists can share album names.
+select
+    cast(played_at_local as date) as play_date,
+    artist,
+    album,
+    count(*) as plays
+from "lastfm"."main"."stg_plays"
+where album is not null
+group by 1, 2, 3
+    );
+    
+  
+[0m19:40:11.644648 [debug] [Thread-1 (]: SQL status: OK in 0.260 seconds
+[0m19:40:11.649459 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_album_daily"
+[0m19:40:11.649846 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_album_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_album_daily"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'lastfm'
+      AND schema_name = 'main'
+      AND table_name = 'mart_album_daily'
+  
+[0m19:40:11.651554 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.656271 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_album_daily"
+[0m19:40:11.656647 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_album_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_album_daily"} */
+alter table "lastfm"."main"."mart_album_daily" rename to "mart_album_daily__dbt_backup"
+[0m19:40:11.657826 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.659805 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_album_daily"
+[0m19:40:11.660168 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_album_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_album_daily"} */
+alter table "lastfm"."main"."mart_album_daily__dbt_tmp" rename to "mart_album_daily"
+[0m19:40:11.660831 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:11.667900 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_album_daily: COMMIT
+[0m19:40:11.668367 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_album_daily"
+[0m19:40:11.668764 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_album_daily: COMMIT
+[0m19:40:11.675180 [debug] [Thread-1 (]: SQL status: OK in 0.006 seconds
+[0m19:40:11.676819 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_album_daily"
+[0m19:40:11.677186 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_album_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_album_daily"} */
+
+      drop table if exists "lastfm"."main"."mart_album_daily__dbt_backup" cascade
+    
+[0m19:40:11.679180 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:11.680458 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_album_daily: Close
+[0m19:40:11.680991 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D04119C050>]}
+[0m19:40:11.681557 [info ] [Thread-1 (]: 15 of 45 OK created sql table model main.mart_album_daily ...................... [[32mOK[0m in 0.35s]
+[0m19:40:11.682221 [debug] [Thread-1 (]: Finished running node model.lastfm_pipeline.mart_album_daily
+[0m19:40:11.682615 [debug] [Thread-1 (]: Began running node model.lastfm_pipeline.mart_track_daily
+[0m19:40:11.683054 [info ] [Thread-1 (]: 16 of 45 START sql table model main.mart_track_daily ........................... [RUN]
+[0m19:40:11.683684 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.lastfm_pipeline.mart_album_daily, now model.lastfm_pipeline.mart_track_daily)
+[0m19:40:11.684231 [debug] [Thread-1 (]: Began compiling node model.lastfm_pipeline.mart_track_daily
+[0m19:40:11.685948 [debug] [Thread-1 (]: Writing injected SQL for node "model.lastfm_pipeline.mart_track_daily"
+[0m19:40:11.686882 [debug] [Thread-1 (]: Began executing node model.lastfm_pipeline.mart_track_daily
+[0m19:40:11.689935 [debug] [Thread-1 (]: Writing runtime sql for node "model.lastfm_pipeline.mart_track_daily"
+[0m19:40:11.690792 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_track_daily"
+[0m19:40:11.691169 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_track_daily: BEGIN
+[0m19:40:11.691513 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.692177 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.692530 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_track_daily"
+[0m19:40:11.692891 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_track_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_track_daily"} */
+
+    
+
+    create  table
+      "lastfm"."main"."mart_track_daily__dbt_tmp"
+  
+    
+    as (
+      -- Plays per artist + track per day.
+select
+    cast(played_at_local as date) as play_date,
+    artist,
+    track,
+    count(*) as plays
+from "lastfm"."main"."stg_plays"
+group by 1, 2, 3
+    );
+    
+  
+[0m19:40:11.793973 [debug] [Thread-1 (]: SQL status: OK in 0.101 seconds
+[0m19:40:11.795146 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_track_daily"
+[0m19:40:11.795524 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_track_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_track_daily"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'lastfm'
+      AND schema_name = 'main'
+      AND table_name = 'mart_track_daily'
+  
+[0m19:40:11.796653 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.798976 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_track_daily"
+[0m19:40:11.799347 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_track_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_track_daily"} */
+alter table "lastfm"."main"."mart_track_daily" rename to "mart_track_daily__dbt_backup"
+[0m19:40:11.800039 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:11.801933 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_track_daily"
+[0m19:40:11.802295 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_track_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_track_daily"} */
+alter table "lastfm"."main"."mart_track_daily__dbt_tmp" rename to "mart_track_daily"
+[0m19:40:11.802996 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:11.805170 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_track_daily: COMMIT
+[0m19:40:11.805538 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_track_daily"
+[0m19:40:11.805887 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_track_daily: COMMIT
+[0m19:40:11.811658 [debug] [Thread-1 (]: SQL status: OK in 0.005 seconds
+[0m19:40:11.813239 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_track_daily"
+[0m19:40:11.813608 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_track_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_track_daily"} */
+
+      drop table if exists "lastfm"."main"."mart_track_daily__dbt_backup" cascade
+    
+[0m19:40:11.815568 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:11.816775 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_track_daily: Close
+[0m19:40:11.817279 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D04124EF50>]}
+[0m19:40:11.817853 [info ] [Thread-1 (]: 16 of 45 OK created sql table model main.mart_track_daily ...................... [[32mOK[0m in 0.13s]
+[0m19:40:11.818523 [debug] [Thread-1 (]: Finished running node model.lastfm_pipeline.mart_track_daily
+[0m19:40:11.818915 [debug] [Thread-1 (]: Began running node model.lastfm_pipeline.dim_artist_genre
+[0m19:40:11.819371 [info ] [Thread-1 (]: 17 of 45 START sql table model main.dim_artist_genre ........................... [RUN]
+[0m19:40:11.819991 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.lastfm_pipeline.mart_track_daily, now model.lastfm_pipeline.dim_artist_genre)
+[0m19:40:11.820364 [debug] [Thread-1 (]: Began compiling node model.lastfm_pipeline.dim_artist_genre
+[0m19:40:11.823151 [debug] [Thread-1 (]: Writing injected SQL for node "model.lastfm_pipeline.dim_artist_genre"
+[0m19:40:11.824284 [debug] [Thread-1 (]: Began executing node model.lastfm_pipeline.dim_artist_genre
+[0m19:40:11.827294 [debug] [Thread-1 (]: Writing runtime sql for node "model.lastfm_pipeline.dim_artist_genre"
+[0m19:40:11.828124 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.dim_artist_genre"
+[0m19:40:11.828490 [debug] [Thread-1 (]: On model.lastfm_pipeline.dim_artist_genre: BEGIN
+[0m19:40:11.828830 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.829488 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.829857 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.dim_artist_genre"
+[0m19:40:11.830252 [debug] [Thread-1 (]: On model.lastfm_pipeline.dim_artist_genre: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.dim_artist_genre"} */
+
+    
+
+    create  table
+      "lastfm"."main"."dim_artist_genre__dbt_tmp"
+  
+    
+    as (
+      -- One row per artist with a single genre: the highest-weighted tag that appears in genre_mapping.
+-- 'unknown' = no tags at all; 'other' = has tags, but none is in the mapping.
+with artists as (
+    select distinct artist
+    from "lastfm"."main"."raw_scrobbles"
+),
+
+artists_with_tags as (
+    select distinct artist
+    from "lastfm"."main"."stg_artist_tags"
+),
+
+mapped_tags as (
+    select
+        t.artist,
+        m.genre,
+        m.genre_family,
+        row_number() over (
+            partition by t.artist
+            order by t.tag_count desc, m.genre
+        ) as rn
+    from "lastfm"."main"."stg_artist_tags" t
+    join "lastfm"."main"."genre_mapping" m
+        on t.tag = lower(m.tag)
+)
+
+select
+    a.artist,
+    case
+        when b.genre is not null then b.genre
+        when w.artist is not null then 'other'
+        else 'unknown'
+    end as genre,
+    case
+        when b.genre_family is not null then b.genre_family
+        when w.artist is not null then 'Other'
+        else 'Unknown'
+    end as genre_family
+from artists a
+left join (select * from mapped_tags where rn = 1) b on b.artist = a.artist
+left join artists_with_tags w on w.artist = a.artist
+    );
+    
+  
+[0m19:40:11.880412 [debug] [Thread-1 (]: SQL status: OK in 0.050 seconds
+[0m19:40:11.881592 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.dim_artist_genre"
+[0m19:40:11.881964 [debug] [Thread-1 (]: On model.lastfm_pipeline.dim_artist_genre: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.dim_artist_genre"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'lastfm'
+      AND schema_name = 'main'
+      AND table_name = 'dim_artist_genre'
+  
+[0m19:40:11.883295 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.885624 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.dim_artist_genre"
+[0m19:40:11.885995 [debug] [Thread-1 (]: On model.lastfm_pipeline.dim_artist_genre: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.dim_artist_genre"} */
+alter table "lastfm"."main"."dim_artist_genre" rename to "dim_artist_genre__dbt_backup"
+[0m19:40:11.886704 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:11.888667 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.dim_artist_genre"
+[0m19:40:11.889041 [debug] [Thread-1 (]: On model.lastfm_pipeline.dim_artist_genre: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.dim_artist_genre"} */
+alter table "lastfm"."main"."dim_artist_genre__dbt_tmp" rename to "dim_artist_genre"
+[0m19:40:11.889764 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:11.892026 [debug] [Thread-1 (]: On model.lastfm_pipeline.dim_artist_genre: COMMIT
+[0m19:40:11.892415 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.dim_artist_genre"
+[0m19:40:11.892771 [debug] [Thread-1 (]: On model.lastfm_pipeline.dim_artist_genre: COMMIT
+[0m19:40:11.897312 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m19:40:11.898865 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.dim_artist_genre"
+[0m19:40:11.899237 [debug] [Thread-1 (]: On model.lastfm_pipeline.dim_artist_genre: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.dim_artist_genre"} */
+
+      drop table if exists "lastfm"."main"."dim_artist_genre__dbt_backup" cascade
+    
+[0m19:40:11.901123 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:11.902349 [debug] [Thread-1 (]: On model.lastfm_pipeline.dim_artist_genre: Close
+[0m19:40:11.902871 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D0422818D0>]}
+[0m19:40:11.903431 [info ] [Thread-1 (]: 17 of 45 OK created sql table model main.dim_artist_genre ...................... [[32mOK[0m in 0.08s]
+[0m19:40:11.904087 [debug] [Thread-1 (]: Finished running node model.lastfm_pipeline.dim_artist_genre
+[0m19:40:11.904528 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8
+[0m19:40:11.904988 [info ] [Thread-1 (]: 18 of 45 START test not_null_mart_album_daily_album ............................ [RUN]
+[0m19:40:11.905588 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.lastfm_pipeline.dim_artist_genre, now test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8)
+[0m19:40:11.905955 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8
+[0m19:40:11.911966 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8"
+[0m19:40:11.912929 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8
+[0m19:40:11.914544 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8"
+[0m19:40:11.915546 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8"
+[0m19:40:11.915925 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8: BEGIN
+[0m19:40:11.916267 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.916895 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.917255 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8"
+[0m19:40:11.917612 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select album
+from "lastfm"."main"."mart_album_daily"
+where album is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.918893 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.920262 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8: ROLLBACK
+[0m19:40:11.920846 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8: Close
+[0m19:40:11.921422 [info ] [Thread-1 (]: 18 of 45 PASS not_null_mart_album_daily_album .................................. [[32mPASS[0m in 0.02s]
+[0m19:40:11.922214 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8
+[0m19:40:11.922626 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9
+[0m19:40:11.923002 [info ] [Thread-1 (]: 19 of 45 START test not_null_mart_album_daily_artist ........................... [RUN]
+[0m19:40:11.923573 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_album_daily_album.9618172ce8, now test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9)
+[0m19:40:11.923946 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9
+[0m19:40:11.931483 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9"
+[0m19:40:11.932469 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9
+[0m19:40:11.934072 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9"
+[0m19:40:11.934941 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9"
+[0m19:40:11.935324 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9: BEGIN
+[0m19:40:11.935671 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.936340 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.936696 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9"
+[0m19:40:11.937054 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artist
+from "lastfm"."main"."mart_album_daily"
+where artist is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.938314 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.939704 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9: ROLLBACK
+[0m19:40:11.940470 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9: Close
+[0m19:40:11.941168 [info ] [Thread-1 (]: 19 of 45 PASS not_null_mart_album_daily_artist ................................. [[32mPASS[0m in 0.02s]
+[0m19:40:11.941856 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9
+[0m19:40:11.942273 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935
+[0m19:40:11.942705 [info ] [Thread-1 (]: 20 of 45 START test not_null_mart_album_daily_play_date ........................ [RUN]
+[0m19:40:11.943228 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_album_daily_artist.2077044aa9, now test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935)
+[0m19:40:11.943595 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935
+[0m19:40:11.949587 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935"
+[0m19:40:11.950529 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935
+[0m19:40:11.952140 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935"
+[0m19:40:11.953058 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935"
+[0m19:40:11.953436 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935: BEGIN
+[0m19:40:11.953783 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.954416 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.954783 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935"
+[0m19:40:11.955143 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select play_date
+from "lastfm"."main"."mart_album_daily"
+where play_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.956471 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.958524 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935: ROLLBACK
+[0m19:40:11.959446 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935: Close
+[0m19:40:11.960179 [info ] [Thread-1 (]: 20 of 45 PASS not_null_mart_album_daily_play_date .............................. [[32mPASS[0m in 0.02s]
+[0m19:40:11.960879 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935
+[0m19:40:11.961280 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7
+[0m19:40:11.961711 [info ] [Thread-1 (]: 21 of 45 START test not_null_mart_album_daily_plays ............................ [RUN]
+[0m19:40:11.962261 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_album_daily_play_date.04429d6935, now test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7)
+[0m19:40:11.962624 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7
+[0m19:40:11.968974 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7"
+[0m19:40:11.969901 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7
+[0m19:40:11.971509 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7"
+[0m19:40:11.972352 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7"
+[0m19:40:11.972719 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7: BEGIN
+[0m19:40:11.973080 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.973770 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.974263 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7"
+[0m19:40:11.974763 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select plays
+from "lastfm"."main"."mart_album_daily"
+where plays is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.976398 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.978123 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7: ROLLBACK
+[0m19:40:11.978811 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7: Close
+[0m19:40:11.979414 [info ] [Thread-1 (]: 21 of 45 PASS not_null_mart_album_daily_plays .................................. [[32mPASS[0m in 0.02s]
+[0m19:40:11.980071 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7
+[0m19:40:11.980472 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e
+[0m19:40:11.980892 [info ] [Thread-1 (]: 22 of 45 START test not_null_mart_track_daily_artist ........................... [RUN]
+[0m19:40:11.981397 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_album_daily_plays.59f5bd50d7, now test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e)
+[0m19:40:11.981761 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e
+[0m19:40:11.987743 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e"
+[0m19:40:11.988641 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e
+[0m19:40:11.990587 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e"
+[0m19:40:11.991766 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e"
+[0m19:40:11.992266 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e: BEGIN
+[0m19:40:11.992625 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:11.993298 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.993665 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e"
+[0m19:40:11.994028 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artist
+from "lastfm"."main"."mart_track_daily"
+where artist is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:11.995320 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:11.996823 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e: ROLLBACK
+[0m19:40:11.997398 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e: Close
+[0m19:40:11.998042 [info ] [Thread-1 (]: 22 of 45 PASS not_null_mart_track_daily_artist ................................. [[32mPASS[0m in 0.02s]
+[0m19:40:11.998733 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e
+[0m19:40:11.999142 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f
+[0m19:40:11.999564 [info ] [Thread-1 (]: 23 of 45 START test not_null_mart_track_daily_play_date ........................ [RUN]
+[0m19:40:12.000076 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_track_daily_artist.899266057e, now test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f)
+[0m19:40:12.000453 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f
+[0m19:40:12.007059 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f"
+[0m19:40:12.008374 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f
+[0m19:40:12.010191 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f"
+[0m19:40:12.011172 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f"
+[0m19:40:12.011556 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f: BEGIN
+[0m19:40:12.011902 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.012587 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.012971 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f"
+[0m19:40:12.013340 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select play_date
+from "lastfm"."main"."mart_track_daily"
+where play_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.014639 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.016037 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f: ROLLBACK
+[0m19:40:12.016620 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f: Close
+[0m19:40:12.017205 [info ] [Thread-1 (]: 23 of 45 PASS not_null_mart_track_daily_play_date .............................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.017891 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f
+[0m19:40:12.018293 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614
+[0m19:40:12.018712 [info ] [Thread-1 (]: 24 of 45 START test not_null_mart_track_daily_plays ............................ [RUN]
+[0m19:40:12.019222 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_track_daily_play_date.329941d66f, now test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614)
+[0m19:40:12.019587 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614
+[0m19:40:12.026123 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614"
+[0m19:40:12.027232 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614
+[0m19:40:12.028895 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614"
+[0m19:40:12.029835 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614"
+[0m19:40:12.030224 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614: BEGIN
+[0m19:40:12.030573 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.031283 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.031652 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614"
+[0m19:40:12.032017 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select plays
+from "lastfm"."main"."mart_track_daily"
+where plays is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.033312 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.034706 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614: ROLLBACK
+[0m19:40:12.035288 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614: Close
+[0m19:40:12.035858 [info ] [Thread-1 (]: 24 of 45 PASS not_null_mart_track_daily_plays .................................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.036505 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614
+[0m19:40:12.036905 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2
+[0m19:40:12.037326 [info ] [Thread-1 (]: 25 of 45 START test not_null_mart_track_daily_track ............................ [RUN]
+[0m19:40:12.037835 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_track_daily_plays.941bb4c614, now test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2)
+[0m19:40:12.038221 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2
+[0m19:40:12.044901 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2"
+[0m19:40:12.045912 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2
+[0m19:40:12.047583 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2"
+[0m19:40:12.048410 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2"
+[0m19:40:12.048778 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2: BEGIN
+[0m19:40:12.049138 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.049825 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.050202 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2"
+[0m19:40:12.050564 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select track
+from "lastfm"."main"."mart_track_daily"
+where track is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.051783 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.053175 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2: ROLLBACK
+[0m19:40:12.053731 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2: Close
+[0m19:40:12.054311 [info ] [Thread-1 (]: 25 of 45 PASS not_null_mart_track_daily_track .................................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.054971 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2
+[0m19:40:12.055384 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.dim_artist_genre_covers_all_artists
+[0m19:40:12.055763 [info ] [Thread-1 (]: 26 of 45 START test dim_artist_genre_covers_all_artists ........................ [RUN]
+[0m19:40:12.056291 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_track_daily_track.d50291b6c2, now test.lastfm_pipeline.dim_artist_genre_covers_all_artists)
+[0m19:40:12.056822 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.dim_artist_genre_covers_all_artists
+[0m19:40:12.059108 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.dim_artist_genre_covers_all_artists"
+[0m19:40:12.060089 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.dim_artist_genre_covers_all_artists
+[0m19:40:12.061826 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.dim_artist_genre_covers_all_artists"
+[0m19:40:12.062735 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.dim_artist_genre_covers_all_artists"
+[0m19:40:12.063114 [debug] [Thread-1 (]: On test.lastfm_pipeline.dim_artist_genre_covers_all_artists: BEGIN
+[0m19:40:12.063462 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.064119 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.064477 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.dim_artist_genre_covers_all_artists"
+[0m19:40:12.064851 [debug] [Thread-1 (]: On test.lastfm_pipeline.dim_artist_genre_covers_all_artists: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.dim_artist_genre_covers_all_artists"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- Fails if the dimension has a different number of artists than raw_scrobbles.
+select raw_artists, dim_artists
+from (
+    select
+        (select count(distinct artist) from "lastfm"."main"."raw_scrobbles") as raw_artists,
+        (select count(*) from "lastfm"."main"."dim_artist_genre") as dim_artists
+)
+where raw_artists != dim_artists
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.069629 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m19:40:12.071170 [debug] [Thread-1 (]: On test.lastfm_pipeline.dim_artist_genre_covers_all_artists: ROLLBACK
+[0m19:40:12.071755 [debug] [Thread-1 (]: On test.lastfm_pipeline.dim_artist_genre_covers_all_artists: Close
+[0m19:40:12.072327 [info ] [Thread-1 (]: 26 of 45 PASS dim_artist_genre_covers_all_artists .............................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.073039 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.dim_artist_genre_covers_all_artists
+[0m19:40:12.073597 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0
+[0m19:40:12.074108 [info ] [Thread-1 (]: 27 of 45 START test not_null_dim_artist_genre_artist ........................... [RUN]
+[0m19:40:12.074709 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.dim_artist_genre_covers_all_artists, now test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0)
+[0m19:40:12.075102 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0
+[0m19:40:12.081575 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0"
+[0m19:40:12.082527 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0
+[0m19:40:12.084131 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0"
+[0m19:40:12.085034 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0"
+[0m19:40:12.085413 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0: BEGIN
+[0m19:40:12.085760 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.086435 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.086792 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0"
+[0m19:40:12.087155 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artist
+from "lastfm"."main"."dim_artist_genre"
+where artist is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.088617 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.091614 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0: ROLLBACK
+[0m19:40:12.092353 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0: Close
+[0m19:40:12.092971 [info ] [Thread-1 (]: 27 of 45 PASS not_null_dim_artist_genre_artist ................................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.093664 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0
+[0m19:40:12.094072 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba
+[0m19:40:12.094442 [info ] [Thread-1 (]: 28 of 45 START test not_null_dim_artist_genre_genre ............................ [RUN]
+[0m19:40:12.094992 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_dim_artist_genre_artist.1ae0d638e0, now test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba)
+[0m19:40:12.095372 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba
+[0m19:40:12.101479 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba"
+[0m19:40:12.102440 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba
+[0m19:40:12.104027 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba"
+[0m19:40:12.104890 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba"
+[0m19:40:12.105266 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba: BEGIN
+[0m19:40:12.105614 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.106249 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.106677 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba"
+[0m19:40:12.107142 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select genre
+from "lastfm"."main"."dim_artist_genre"
+where genre is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.108623 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.110123 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba: ROLLBACK
+[0m19:40:12.110728 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba: Close
+[0m19:40:12.111326 [info ] [Thread-1 (]: 28 of 45 PASS not_null_dim_artist_genre_genre .................................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.111984 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba
+[0m19:40:12.112396 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c
+[0m19:40:12.112825 [info ] [Thread-1 (]: 29 of 45 START test not_null_dim_artist_genre_genre_family ..................... [RUN]
+[0m19:40:12.113390 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_dim_artist_genre_genre.3db76264ba, now test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c)
+[0m19:40:12.113769 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c
+[0m19:40:12.120190 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c"
+[0m19:40:12.121124 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c
+[0m19:40:12.123024 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c"
+[0m19:40:12.124376 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c"
+[0m19:40:12.125161 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c: BEGIN
+[0m19:40:12.125761 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.126504 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.126883 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c"
+[0m19:40:12.127254 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select genre_family
+from "lastfm"."main"."dim_artist_genre"
+where genre_family is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.128559 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.129946 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c: ROLLBACK
+[0m19:40:12.130582 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c: Close
+[0m19:40:12.131170 [info ] [Thread-1 (]: 29 of 45 PASS not_null_dim_artist_genre_genre_family ........................... [[32mPASS[0m in 0.02s]
+[0m19:40:12.131849 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c
+[0m19:40:12.132249 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b
+[0m19:40:12.132671 [info ] [Thread-1 (]: 30 of 45 START test unique_dim_artist_genre_artist ............................. [RUN]
+[0m19:40:12.133171 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_dim_artist_genre_genre_family.10927a391c, now test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b)
+[0m19:40:12.133552 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b
+[0m19:40:12.139445 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b"
+[0m19:40:12.140446 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b
+[0m19:40:12.142452 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b"
+[0m19:40:12.143466 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b"
+[0m19:40:12.143866 [debug] [Thread-1 (]: On test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b: BEGIN
+[0m19:40:12.144216 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.144884 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.145255 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b"
+[0m19:40:12.145622 [debug] [Thread-1 (]: On test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    artist as unique_field,
+    count(*) as n_records
+
+from "lastfm"."main"."dim_artist_genre"
+where artist is not null
+group by artist
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.148447 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:12.149907 [debug] [Thread-1 (]: On test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b: ROLLBACK
+[0m19:40:12.150491 [debug] [Thread-1 (]: On test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b: Close
+[0m19:40:12.151071 [info ] [Thread-1 (]: 30 of 45 PASS unique_dim_artist_genre_artist ................................... [[32mPASS[0m in 0.02s]
+[0m19:40:12.151730 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b
+[0m19:40:12.152373 [debug] [Thread-1 (]: Began running node model.lastfm_pipeline.mart_artist_daily
+[0m19:40:12.152857 [info ] [Thread-1 (]: 31 of 45 START sql table model main.mart_artist_daily .......................... [RUN]
+[0m19:40:12.153413 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.unique_dim_artist_genre_artist.b927e5421b, now model.lastfm_pipeline.mart_artist_daily)
+[0m19:40:12.153786 [debug] [Thread-1 (]: Began compiling node model.lastfm_pipeline.mart_artist_daily
+[0m19:40:12.155664 [debug] [Thread-1 (]: Writing injected SQL for node "model.lastfm_pipeline.mart_artist_daily"
+[0m19:40:12.156732 [debug] [Thread-1 (]: Began executing node model.lastfm_pipeline.mart_artist_daily
+[0m19:40:12.160459 [debug] [Thread-1 (]: Writing runtime sql for node "model.lastfm_pipeline.mart_artist_daily"
+[0m19:40:12.161466 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_artist_daily"
+[0m19:40:12.161865 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_artist_daily: BEGIN
+[0m19:40:12.162220 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.162900 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.163268 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_artist_daily"
+[0m19:40:12.163635 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_artist_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_artist_daily"} */
+
+    
+
+    create  table
+      "lastfm"."main"."mart_artist_daily__dbt_tmp"
+  
+    
+    as (
+      -- Plays per artist per day (local date), with the artist's single genre and genre family.
+-- Genre totals come from summing this table, since each artist has exactly one genre.
+select
+    cast(p.played_at_local as date) as play_date,
+    p.artist,
+    g.genre,
+    g.genre_family,
+    count(*) as plays
+from "lastfm"."main"."stg_plays" p
+join "lastfm"."main"."dim_artist_genre" g on g.artist = p.artist
+group by 1, 2, 3, 4
+    );
+    
+  
+[0m19:40:12.254231 [debug] [Thread-1 (]: SQL status: OK in 0.090 seconds
+[0m19:40:12.255388 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_artist_daily"
+[0m19:40:12.255801 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_artist_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_artist_daily"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'lastfm'
+      AND schema_name = 'main'
+      AND table_name = 'mart_artist_daily'
+  
+[0m19:40:12.257085 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.259601 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_artist_daily"
+[0m19:40:12.259974 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_artist_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_artist_daily"} */
+alter table "lastfm"."main"."mart_artist_daily" rename to "mart_artist_daily__dbt_backup"
+[0m19:40:12.260678 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:12.262565 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_artist_daily"
+[0m19:40:12.262928 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_artist_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_artist_daily"} */
+alter table "lastfm"."main"."mart_artist_daily__dbt_tmp" rename to "mart_artist_daily"
+[0m19:40:12.263594 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:12.265309 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_artist_daily: COMMIT
+[0m19:40:12.265670 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_artist_daily"
+[0m19:40:12.266016 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_artist_daily: COMMIT
+[0m19:40:12.269972 [debug] [Thread-1 (]: SQL status: OK in 0.004 seconds
+[0m19:40:12.271556 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_artist_daily"
+[0m19:40:12.271957 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_artist_daily: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_artist_daily"} */
+
+      drop table if exists "lastfm"."main"."mart_artist_daily__dbt_backup" cascade
+    
+[0m19:40:12.273946 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:12.275293 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_artist_daily: Close
+[0m19:40:12.275841 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D0411521B0>]}
+[0m19:40:12.276411 [info ] [Thread-1 (]: 31 of 45 OK created sql table model main.mart_artist_daily ..................... [[32mOK[0m in 0.12s]
+[0m19:40:12.277064 [debug] [Thread-1 (]: Finished running node model.lastfm_pipeline.mart_artist_daily
+[0m19:40:12.277467 [debug] [Thread-1 (]: Began running node model.lastfm_pipeline.mart_recent_plays
+[0m19:40:12.277911 [info ] [Thread-1 (]: 32 of 45 START sql table model main.mart_recent_plays .......................... [RUN]
+[0m19:40:12.278605 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.lastfm_pipeline.mart_artist_daily, now model.lastfm_pipeline.mart_recent_plays)
+[0m19:40:12.279041 [debug] [Thread-1 (]: Began compiling node model.lastfm_pipeline.mart_recent_plays
+[0m19:40:12.281429 [debug] [Thread-1 (]: Writing injected SQL for node "model.lastfm_pipeline.mart_recent_plays"
+[0m19:40:12.282439 [debug] [Thread-1 (]: Began executing node model.lastfm_pipeline.mart_recent_plays
+[0m19:40:12.285863 [debug] [Thread-1 (]: Writing runtime sql for node "model.lastfm_pipeline.mart_recent_plays"
+[0m19:40:12.286695 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_recent_plays"
+[0m19:40:12.287059 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_recent_plays: BEGIN
+[0m19:40:12.287434 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.288074 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.288427 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_recent_plays"
+[0m19:40:12.288791 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_recent_plays: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_recent_plays"} */
+
+    
+
+    create  table
+      "lastfm"."main"."mart_recent_plays__dbt_tmp"
+  
+    
+    as (
+      -- The most recent plays (local time), with genre. This is the only play-level table that is
+-- published; the window size can be changed with the recent_plays_limit variable.
+select
+    p.played_at_local,
+    p.artist,
+    p.track,
+    p.album,
+    g.genre,
+    g.genre_family
+from "lastfm"."main"."stg_plays" p
+join "lastfm"."main"."dim_artist_genre" g on g.artist = p.artist
+order by p.played_at_utc desc
+limit 100
+    );
+    
+  
+[0m19:40:12.377991 [debug] [Thread-1 (]: SQL status: OK in 0.089 seconds
+[0m19:40:12.379183 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_recent_plays"
+[0m19:40:12.379560 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_recent_plays: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_recent_plays"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE database_name = 'lastfm'
+      AND schema_name = 'main'
+      AND table_name = 'mart_recent_plays'
+  
+[0m19:40:12.380687 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.383047 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_recent_plays"
+[0m19:40:12.383418 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_recent_plays: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_recent_plays"} */
+alter table "lastfm"."main"."mart_recent_plays" rename to "mart_recent_plays__dbt_backup"
+[0m19:40:12.384127 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:12.386013 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_recent_plays"
+[0m19:40:12.386378 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_recent_plays: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_recent_plays"} */
+alter table "lastfm"."main"."mart_recent_plays__dbt_tmp" rename to "mart_recent_plays"
+[0m19:40:12.387041 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:40:12.388879 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_recent_plays: COMMIT
+[0m19:40:12.389421 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_recent_plays"
+[0m19:40:12.389923 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_recent_plays: COMMIT
+[0m19:40:12.392468 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:12.394096 [debug] [Thread-1 (]: Using duckdb connection "model.lastfm_pipeline.mart_recent_plays"
+[0m19:40:12.394463 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_recent_plays: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "model.lastfm_pipeline.mart_recent_plays"} */
+
+      drop table if exists "lastfm"."main"."mart_recent_plays__dbt_backup" cascade
+    
+[0m19:40:12.396410 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:40:12.397678 [debug] [Thread-1 (]: On model.lastfm_pipeline.mart_recent_plays: Close
+[0m19:40:12.398197 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '4e618338-9546-4769-a294-45514c2a112c', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D0411521B0>]}
+[0m19:40:12.398757 [info ] [Thread-1 (]: 32 of 45 OK created sql table model main.mart_recent_plays ..................... [[32mOK[0m in 0.12s]
+[0m19:40:12.399400 [debug] [Thread-1 (]: Finished running node model.lastfm_pipeline.mart_recent_plays
+[0m19:40:12.399795 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.marts_grain_is_unique
+[0m19:40:12.400169 [info ] [Thread-1 (]: 33 of 45 START test marts_grain_is_unique ...................................... [RUN]
+[0m19:40:12.400789 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.lastfm_pipeline.mart_recent_plays, now test.lastfm_pipeline.marts_grain_is_unique)
+[0m19:40:12.401148 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.marts_grain_is_unique
+[0m19:40:12.403150 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.marts_grain_is_unique"
+[0m19:40:12.403993 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.marts_grain_is_unique
+[0m19:40:12.405672 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.marts_grain_is_unique"
+[0m19:40:12.406858 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.marts_grain_is_unique"
+[0m19:40:12.407371 [debug] [Thread-1 (]: On test.lastfm_pipeline.marts_grain_is_unique: BEGIN
+[0m19:40:12.407827 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.408593 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.408960 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.marts_grain_is_unique"
+[0m19:40:12.409333 [debug] [Thread-1 (]: On test.lastfm_pipeline.marts_grain_is_unique: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.marts_grain_is_unique"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- Fails if any mart has duplicate rows at its declared grain.
+select 'artist_daily' as mart, play_date::varchar as k1, artist as k2, '' as k3
+from "lastfm"."main"."mart_artist_daily"
+group by play_date, artist
+having count(*) > 1
+
+union all
+
+select 'album_daily', play_date::varchar, artist, album
+from "lastfm"."main"."mart_album_daily"
+group by play_date, artist, album
+having count(*) > 1
+
+union all
+
+select 'track_daily', play_date::varchar, artist, track
+from "lastfm"."main"."mart_track_daily"
+group by play_date, artist, track
+having count(*) > 1
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.446558 [debug] [Thread-1 (]: SQL status: OK in 0.037 seconds
+[0m19:40:12.448306 [debug] [Thread-1 (]: On test.lastfm_pipeline.marts_grain_is_unique: ROLLBACK
+[0m19:40:12.448891 [debug] [Thread-1 (]: On test.lastfm_pipeline.marts_grain_is_unique: Close
+[0m19:40:12.449470 [info ] [Thread-1 (]: 33 of 45 PASS marts_grain_is_unique ............................................ [[32mPASS[0m in 0.05s]
+[0m19:40:12.450161 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.marts_grain_is_unique
+[0m19:40:12.450559 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.marts_reconcile_with_staging
+[0m19:40:12.450929 [info ] [Thread-1 (]: 34 of 45 START test marts_reconcile_with_staging ............................... [RUN]
+[0m19:40:12.451497 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.marts_grain_is_unique, now test.lastfm_pipeline.marts_reconcile_with_staging)
+[0m19:40:12.451862 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.marts_reconcile_with_staging
+[0m19:40:12.454539 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.marts_reconcile_with_staging"
+[0m19:40:12.455515 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.marts_reconcile_with_staging
+[0m19:40:12.458023 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.marts_reconcile_with_staging"
+[0m19:40:12.459193 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.marts_reconcile_with_staging"
+[0m19:40:12.459603 [debug] [Thread-1 (]: On test.lastfm_pipeline.marts_reconcile_with_staging: BEGIN
+[0m19:40:12.459959 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.460605 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.460973 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.marts_reconcile_with_staging"
+[0m19:40:12.461353 [debug] [Thread-1 (]: On test.lastfm_pipeline.marts_reconcile_with_staging: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.marts_reconcile_with_staging"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- Fails if a mart's total plays differ from what staging says it should be.
+with checks as (
+    select 'artist_daily' as mart,
+           (select sum(plays) from "lastfm"."main"."mart_artist_daily") as mart_plays,
+           (select count(*) from "lastfm"."main"."stg_plays") as expected_plays
+    union all
+    select 'track_daily',
+           (select sum(plays) from "lastfm"."main"."mart_track_daily"),
+           (select count(*) from "lastfm"."main"."stg_plays")
+    union all
+    select 'album_daily',
+           (select sum(plays) from "lastfm"."main"."mart_album_daily"),
+           (select count(*) from "lastfm"."main"."stg_plays" where album is not null)
+)
+select * from checks where mart_plays != expected_plays
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.554308 [debug] [Thread-1 (]: SQL status: OK in 0.092 seconds
+[0m19:40:12.556800 [debug] [Thread-1 (]: On test.lastfm_pipeline.marts_reconcile_with_staging: ROLLBACK
+[0m19:40:12.557434 [debug] [Thread-1 (]: On test.lastfm_pipeline.marts_reconcile_with_staging: Close
+[0m19:40:12.558025 [info ] [Thread-1 (]: 34 of 45 PASS marts_reconcile_with_staging ..................................... [[32mPASS[0m in 0.11s]
+[0m19:40:12.558680 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.marts_reconcile_with_staging
+[0m19:40:12.559073 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903
+[0m19:40:12.559491 [info ] [Thread-1 (]: 35 of 45 START test not_null_mart_artist_daily_artist .......................... [RUN]
+[0m19:40:12.560045 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.marts_reconcile_with_staging, now test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903)
+[0m19:40:12.560419 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903
+[0m19:40:12.566408 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903"
+[0m19:40:12.567353 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903
+[0m19:40:12.568930 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903"
+[0m19:40:12.569909 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903"
+[0m19:40:12.570350 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903: BEGIN
+[0m19:40:12.570708 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.571412 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.571786 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903"
+[0m19:40:12.572163 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artist
+from "lastfm"."main"."mart_artist_daily"
+where artist is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.573657 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.575186 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903: ROLLBACK
+[0m19:40:12.575855 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903: Close
+[0m19:40:12.576469 [info ] [Thread-1 (]: 35 of 45 PASS not_null_mart_artist_daily_artist ................................ [[32mPASS[0m in 0.02s]
+[0m19:40:12.577141 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903
+[0m19:40:12.577552 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed
+[0m19:40:12.577984 [info ] [Thread-1 (]: 36 of 45 START test not_null_mart_artist_daily_genre ........................... [RUN]
+[0m19:40:12.578507 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_artist_daily_artist.44b63de903, now test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed)
+[0m19:40:12.578875 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed
+[0m19:40:12.585082 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed"
+[0m19:40:12.585994 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed
+[0m19:40:12.587584 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed"
+[0m19:40:12.588472 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed"
+[0m19:40:12.588848 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed: BEGIN
+[0m19:40:12.589240 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.590017 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.590428 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed"
+[0m19:40:12.590807 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select genre
+from "lastfm"."main"."mart_artist_daily"
+where genre is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.592243 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.593688 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed: ROLLBACK
+[0m19:40:12.594312 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed: Close
+[0m19:40:12.594912 [info ] [Thread-1 (]: 36 of 45 PASS not_null_mart_artist_daily_genre ................................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.595566 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed
+[0m19:40:12.595978 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72
+[0m19:40:12.596406 [info ] [Thread-1 (]: 37 of 45 START test not_null_mart_artist_daily_genre_family .................... [RUN]
+[0m19:40:12.596934 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_artist_daily_genre.93c4acc7ed, now test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72)
+[0m19:40:12.597302 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72
+[0m19:40:12.603238 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72"
+[0m19:40:12.604189 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72
+[0m19:40:12.605752 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72"
+[0m19:40:12.606673 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72"
+[0m19:40:12.607125 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72: BEGIN
+[0m19:40:12.607645 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.608462 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.608893 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72"
+[0m19:40:12.609294 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select genre_family
+from "lastfm"."main"."mart_artist_daily"
+where genre_family is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.610708 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.612135 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72: ROLLBACK
+[0m19:40:12.612758 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72: Close
+[0m19:40:12.613378 [info ] [Thread-1 (]: 37 of 45 PASS not_null_mart_artist_daily_genre_family .......................... [[32mPASS[0m in 0.02s]
+[0m19:40:12.614065 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72
+[0m19:40:12.614468 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b
+[0m19:40:12.614886 [info ] [Thread-1 (]: 38 of 45 START test not_null_mart_artist_daily_play_date ....................... [RUN]
+[0m19:40:12.615382 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_artist_daily_genre_family.4a822ceb72, now test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b)
+[0m19:40:12.615743 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b
+[0m19:40:12.622069 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b"
+[0m19:40:12.623057 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b
+[0m19:40:12.624922 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b"
+[0m19:40:12.626038 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b"
+[0m19:40:12.626474 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b: BEGIN
+[0m19:40:12.626834 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.627520 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.627897 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b"
+[0m19:40:12.628266 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select play_date
+from "lastfm"."main"."mart_artist_daily"
+where play_date is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.629533 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.630924 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b: ROLLBACK
+[0m19:40:12.631526 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b: Close
+[0m19:40:12.632114 [info ] [Thread-1 (]: 38 of 45 PASS not_null_mart_artist_daily_play_date ............................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.632765 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b
+[0m19:40:12.633165 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3
+[0m19:40:12.633528 [info ] [Thread-1 (]: 39 of 45 START test not_null_mart_artist_daily_plays ........................... [RUN]
+[0m19:40:12.634033 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_artist_daily_play_date.a6447b063b, now test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3)
+[0m19:40:12.634400 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3
+[0m19:40:12.640460 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3"
+[0m19:40:12.641564 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3
+[0m19:40:12.643331 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3"
+[0m19:40:12.644319 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3"
+[0m19:40:12.644715 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3: BEGIN
+[0m19:40:12.645062 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.645719 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.646073 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3"
+[0m19:40:12.646430 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select plays
+from "lastfm"."main"."mart_artist_daily"
+where plays is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.647745 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.649127 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3: ROLLBACK
+[0m19:40:12.649694 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3: Close
+[0m19:40:12.650263 [info ] [Thread-1 (]: 39 of 45 PASS not_null_mart_artist_daily_plays ................................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.650914 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3
+[0m19:40:12.651320 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.mart_recent_plays_is_newest
+[0m19:40:12.651743 [info ] [Thread-1 (]: 40 of 45 START test mart_recent_plays_is_newest ................................ [RUN]
+[0m19:40:12.652238 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_artist_daily_plays.5b83c4ded3, now test.lastfm_pipeline.mart_recent_plays_is_newest)
+[0m19:40:12.652603 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.mart_recent_plays_is_newest
+[0m19:40:12.654409 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.mart_recent_plays_is_newest"
+[0m19:40:12.655357 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.mart_recent_plays_is_newest
+[0m19:40:12.656990 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.mart_recent_plays_is_newest"
+[0m19:40:12.658301 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.mart_recent_plays_is_newest"
+[0m19:40:12.658910 [debug] [Thread-1 (]: On test.lastfm_pipeline.mart_recent_plays_is_newest: BEGIN
+[0m19:40:12.659272 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.659962 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.660334 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.mart_recent_plays_is_newest"
+[0m19:40:12.660711 [debug] [Thread-1 (]: On test.lastfm_pipeline.mart_recent_plays_is_newest: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.mart_recent_plays_is_newest"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- Fails if mart_recent_plays is not exactly the newest N plays of staging.
+-- (Two plays at the exact same second on the window boundary could trigger a false alarm.)
+with bounds as (
+    select min(played_at_local) as oldest, count(*) as n
+    from "lastfm"."main"."mart_recent_plays"
+)
+select b.n, count(*) as plays_in_staging_since_oldest
+from "lastfm"."main"."stg_plays" p, bounds b
+where p.played_at_local >= b.oldest
+group by b.n
+having count(*) != b.n
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.679126 [debug] [Thread-1 (]: SQL status: OK in 0.018 seconds
+[0m19:40:12.680666 [debug] [Thread-1 (]: On test.lastfm_pipeline.mart_recent_plays_is_newest: ROLLBACK
+[0m19:40:12.681281 [debug] [Thread-1 (]: On test.lastfm_pipeline.mart_recent_plays_is_newest: Close
+[0m19:40:12.681929 [info ] [Thread-1 (]: 40 of 45 PASS mart_recent_plays_is_newest ...................................... [[32mPASS[0m in 0.03s]
+[0m19:40:12.682625 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.mart_recent_plays_is_newest
+[0m19:40:12.683026 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489
+[0m19:40:12.683398 [info ] [Thread-1 (]: 41 of 45 START test not_null_mart_recent_plays_artist .......................... [RUN]
+[0m19:40:12.683936 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.mart_recent_plays_is_newest, now test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489)
+[0m19:40:12.684303 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489
+[0m19:40:12.691398 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489"
+[0m19:40:12.692459 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489
+[0m19:40:12.694102 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489"
+[0m19:40:12.695008 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489"
+[0m19:40:12.695385 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489: BEGIN
+[0m19:40:12.695730 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.696366 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.696734 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489"
+[0m19:40:12.697096 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select artist
+from "lastfm"."main"."mart_recent_plays"
+where artist is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.698392 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.699801 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489: ROLLBACK
+[0m19:40:12.700376 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489: Close
+[0m19:40:12.700962 [info ] [Thread-1 (]: 41 of 45 PASS not_null_mart_recent_plays_artist ................................ [[32mPASS[0m in 0.02s]
+[0m19:40:12.701609 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489
+[0m19:40:12.702000 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec
+[0m19:40:12.702365 [info ] [Thread-1 (]: 42 of 45 START test not_null_mart_recent_plays_genre ........................... [RUN]
+[0m19:40:12.702877 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_recent_plays_artist.fd733d0489, now test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec)
+[0m19:40:12.703235 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec
+[0m19:40:12.709581 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec"
+[0m19:40:12.710593 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec
+[0m19:40:12.712239 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec"
+[0m19:40:12.713081 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec"
+[0m19:40:12.713450 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec: BEGIN
+[0m19:40:12.713799 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.714437 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.714803 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec"
+[0m19:40:12.715165 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select genre
+from "lastfm"."main"."mart_recent_plays"
+where genre is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.716384 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.717752 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec: ROLLBACK
+[0m19:40:12.718318 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec: Close
+[0m19:40:12.718897 [info ] [Thread-1 (]: 42 of 45 PASS not_null_mart_recent_plays_genre ................................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.719543 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec
+[0m19:40:12.719943 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a
+[0m19:40:12.720363 [info ] [Thread-1 (]: 43 of 45 START test not_null_mart_recent_plays_genre_family .................... [RUN]
+[0m19:40:12.720859 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_recent_plays_genre.55199722ec, now test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a)
+[0m19:40:12.721224 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a
+[0m19:40:12.728786 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a"
+[0m19:40:12.729770 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a
+[0m19:40:12.731397 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a"
+[0m19:40:12.732324 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a"
+[0m19:40:12.732703 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a: BEGIN
+[0m19:40:12.733047 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.733728 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.734091 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a"
+[0m19:40:12.734451 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select genre_family
+from "lastfm"."main"."mart_recent_plays"
+where genre_family is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.735681 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.737022 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a: ROLLBACK
+[0m19:40:12.737602 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a: Close
+[0m19:40:12.738162 [info ] [Thread-1 (]: 43 of 45 PASS not_null_mart_recent_plays_genre_family .......................... [[32mPASS[0m in 0.02s]
+[0m19:40:12.738830 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a
+[0m19:40:12.739232 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e
+[0m19:40:12.739612 [info ] [Thread-1 (]: 44 of 45 START test not_null_mart_recent_plays_played_at_local ................. [RUN]
+[0m19:40:12.740327 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_recent_plays_genre_family.fe7cbf763a, now test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e)
+[0m19:40:12.740721 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e
+[0m19:40:12.746809 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e"
+[0m19:40:12.747960 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e
+[0m19:40:12.749577 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e"
+[0m19:40:12.750413 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e"
+[0m19:40:12.750836 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e: BEGIN
+[0m19:40:12.751191 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.751842 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.752211 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e"
+[0m19:40:12.752577 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select played_at_local
+from "lastfm"."main"."mart_recent_plays"
+where played_at_local is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.753872 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.755279 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e: ROLLBACK
+[0m19:40:12.755857 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e: Close
+[0m19:40:12.756462 [info ] [Thread-1 (]: 44 of 45 PASS not_null_mart_recent_plays_played_at_local ....................... [[32mPASS[0m in 0.02s]
+[0m19:40:12.757323 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e
+[0m19:40:12.757790 [debug] [Thread-1 (]: Began running node test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199
+[0m19:40:12.758257 [info ] [Thread-1 (]: 45 of 45 START test not_null_mart_recent_plays_track ........................... [RUN]
+[0m19:40:12.758795 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.lastfm_pipeline.not_null_mart_recent_plays_played_at_local.4e687f490e, now test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199)
+[0m19:40:12.759182 [debug] [Thread-1 (]: Began compiling node test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199
+[0m19:40:12.765636 [debug] [Thread-1 (]: Writing injected SQL for node "test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199"
+[0m19:40:12.766648 [debug] [Thread-1 (]: Began executing node test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199
+[0m19:40:12.768270 [debug] [Thread-1 (]: Writing runtime sql for node "test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199"
+[0m19:40:12.769179 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199"
+[0m19:40:12.769575 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199: BEGIN
+[0m19:40:12.769922 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:40:12.770572 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.770938 [debug] [Thread-1 (]: Using duckdb connection "test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199"
+[0m19:40:12.771301 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199: /* {"app": "dbt", "dbt_version": "1.12.6", "profile_name": "lastfm_pipeline", "target_name": "dev", "node_id": "test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select track
+from "lastfm"."main"."mart_recent_plays"
+where track is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m19:40:12.772576 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:40:12.774334 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199: ROLLBACK
+[0m19:40:12.775220 [debug] [Thread-1 (]: On test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199: Close
+[0m19:40:12.775888 [info ] [Thread-1 (]: 45 of 45 PASS not_null_mart_recent_plays_track ................................. [[32mPASS[0m in 0.02s]
+[0m19:40:12.776591 [debug] [Thread-1 (]: Finished running node test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199
+[0m19:40:12.777703 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:40:12.778023 [debug] [MainThread]: On master: BEGIN
+[0m19:40:12.778311 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:40:12.778916 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m19:40:12.779219 [debug] [MainThread]: On master: COMMIT
+[0m19:40:12.779512 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:40:12.779796 [debug] [MainThread]: On master: COMMIT
+[0m19:40:12.780292 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:40:12.780608 [debug] [MainThread]: On master: Close
+[0m19:40:12.781018 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:40:12.781299 [debug] [MainThread]: Connection 'create_lastfm_main' was properly closed.
+[0m19:40:12.781566 [debug] [MainThread]: Connection 'list_lastfm_main' was properly closed.
+[0m19:40:12.781832 [debug] [MainThread]: Connection 'test.lastfm_pipeline.not_null_mart_recent_plays_track.4ffa1a5199' was properly closed.
+[0m19:40:12.782218 [info ] [MainThread]: 
+[0m19:40:12.782601 [info ] [MainThread]: Finished running 1 seed, 5 table models, 37 data tests, 2 view models in 0 hours 0 minutes and 3.98 seconds (3.98s).
+[0m19:40:12.790408 [debug] [MainThread]: Command end result
+[0m19:40:12.834730 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\allan\Documents\Lastfm_Project\dbt\target\manifest.json
+[0m19:40:12.837244 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\allan\Documents\Lastfm_Project\dbt\target\semantic_manifest.json
+[0m19:40:12.840138 [debug] [MainThread]: Wrote artifact OsiDocument to C:\Users\allan\Documents\Lastfm_Project\dbt\target\osi_document.json
+[0m19:40:12.849089 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\allan\Documents\Lastfm_Project\dbt\target\run_results.json
+[0m19:40:12.849440 [info ] [MainThread]: 
+[0m19:40:12.849907 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:40:12.850299 [info ] [MainThread]: 
+[0m19:40:12.850684 [info ] [MainThread]: Done. PASS=45 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=45
+[0m19:40:12.851599 [debug] [MainThread]: Command `dbt build` succeeded at 19:40:12.851489 after 6.34 seconds
+[0m19:40:12.851954 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D041153FB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D040D5BFB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002D03DDAA270>]}
+[0m19:40:12.852307 [debug] [MainThread]: Flushing usage events
+[0m19:40:13.571038 [debug] [MainThread]: An error was encountered while trying to flush usage events

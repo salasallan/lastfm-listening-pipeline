@@ -5,6 +5,10 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+import shutil
+import tempfile
+import urllib.request
+
 import altair as alt
 import streamlit as st
 
@@ -12,23 +16,63 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import queries as q  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
+
 PALETTE = ["#4e79a7", "#f28e2b", "#e15759", "#76b7b2", "#59a14f", "#edc948",
            "#b07aa1", "#ff9da7", "#9c755f", "#86bc86", "#d37295", "#8cd17d"]
 GREY = "#9aa0a6"
+
 PRESETS = ["Yesterday", "Last 7 days", "Last 30 days", "This month", "Last month",
            "This year", "All time", "Custom range"]
+
 GRAINS = ["day", "week", "month"]
+
+DEFAULT_DATA_URL = (
+    "https://github.com/salasallan/lastfm-listening-pipeline/"
+    "releases/download/data/dashboard.duckdb"
+)
+CACHE_TTL_SECONDS = 15 * 60
 
 st.set_page_config(page_title="Music listening dashboard", page_icon="🎧", layout="wide")
 
+#def resolve_db_path() -> Path:
+#    configured = os.getenv("LASTFM_DASHBOARD_DB")
+#    if configured:
+#        path = Path(configured)
+#        return path if path.is_absolute() else ROOT / path
+#    return ROOT / "data" / "dashboard.duckdb"
 
-def resolve_db_path() -> Path:
+def local_db_path():
     configured = os.getenv("LASTFM_DASHBOARD_DB")
     if configured:
         path = Path(configured)
         return path if path.is_absolute() else ROOT / path
-    return ROOT / "data" / "dashboard.duckdb"
+    default = ROOT / "data" / "dashboard.duckdb"
+    return default if default.exists() else None
 
+@st.cache_data(ttl=CACHE_TTL_SECONDS, show_spinner="Downloading the latest data...")
+def download_db(url: str) -> str:
+    """Download the exported file to a temp folder; keep the previous copy if the download fails."""
+    target = Path(tempfile.gettempdir()) / "lastfm_dashboard" / "dashboard.duckdb"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    part = target.with_name(target.name + ".part")
+    try:
+        request = urllib.request.Request(url, headers={"User-Agent": "lastfm-listening-pipeline-dashboard"})
+        with urllib.request.urlopen(request, timeout=60) as response, open(part, "wb") as out:
+            shutil.copyfileobj(response, out)
+        part.replace(target)
+    except Exception as exc:  # network error, missing asset, ...
+        part.unlink(missing_ok=True)
+        if not target.exists():
+            raise RuntimeError(f"Could not download the data file: {exc}") from exc
+    return str(target)
+
+def resolve_db_path() -> Path:
+    forced_url = os.getenv("LASTFM_DASHBOARD_URL")
+    if not forced_url:
+        local = local_db_path()
+        if local is not None:
+            return local
+    return Path(download_db(forced_url or DEFAULT_DATA_URL))
 
 @st.cache_resource(max_entries=2, show_spinner="Loading data...")
 def get_connection(db_path: str, version: float):
@@ -82,7 +126,16 @@ def show_table(df, rename):
     st.dataframe(table, hide_index=True)
 
 
-db_path = resolve_db_path()
+#db_path = resolve_db_path()
+#if not db_path.exists():
+#    st.error(f"Data file not found: {db_path}. Run scripts/export_dashboard_data.py first.")
+#    st.stop()
+
+try:
+    db_path = resolve_db_path()
+except RuntimeError as exc:
+    st.error(str(exc))
+    st.stop()
 if not db_path.exists():
     st.error(f"Data file not found: {db_path}. Run scripts/export_dashboard_data.py first.")
     st.stop()
