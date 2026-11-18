@@ -165,7 +165,7 @@ top_n = st.sidebar.slider("Items shown", 5, 25, 10)
 
 # ---- Header and KPIs ----
 updated = meta["exported_at_utc"].replace(tzinfo=ZoneInfo("UTC")).astimezone(tz)
-st.title("Music Scrobbles Dashboard")
+st.title("My Music Wrapped!")
 st.caption(
     f"Source: Last.fm scrobbles · latest play: {fmt_day(meta['latest_play_date'])} · "
     f"data updated {updated:%b %d, %Y %H:%M} (local time)"
