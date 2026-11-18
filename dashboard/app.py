@@ -32,7 +32,7 @@ DEFAULT_DATA_URL = (
 )
 CACHE_TTL_SECONDS = 15 * 60
 
-st.set_page_config(page_title="Music listening dashboard", page_icon="🎧", layout="wide")
+st.set_page_config(page_title="My Music Wrapped", page_icon="🎧", layout="wide")
 
 #def resolve_db_path() -> Path:
 #    configured = os.getenv("LASTFM_DASHBOARD_DB")
