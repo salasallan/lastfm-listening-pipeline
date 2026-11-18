@@ -3,7 +3,7 @@
 An end-to-end data pipeline and dashboard built on my own Last.fm listening history:
 Python ingestion → DuckDB → dbt models and tests → Streamlit dashboard.
 
-> Live dashboard: _coming soon_
+> Live dashboard: [Click Here!](https://lastfmlisteningproject.streamlit.app/)
 
 ## What it does
 
